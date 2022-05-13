@@ -11,7 +11,7 @@ class ConvertisseurDeMesures extends StatefulWidget {
 
 class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
 
-  double _nombreSaisi = 0.0;
+  String _nombreSaisi = "";
   @override 
   Widget build(BuildContext context)
   {
@@ -22,8 +22,13 @@ class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
          title : Text('Convertissez !'),
        ),
        body : Center(
-         child: TextField(),   
-         ) 
+         child: TextField(onChanged: (value) => setState(() {
+           _nombreSaisi = value;
+           print(_nombreSaisi);
+         }),
+         ),   
+         ),
+   
        ),
       
    );
