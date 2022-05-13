@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,26 +13,25 @@ class ConvertisseurDeMesures extends StatefulWidget {
 
 class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
 
-  String _nombreSaisi = "";
+  double _nombreSaisi = 0.0;
   @override 
   Widget build(BuildContext context)
   {
-   return MaterialApp(
-     title: 'Convertisseur de mesures',
-     home: Scaffold(
-       appBar: AppBar(
-         title : Text('Convertissez !'),
-       ),
-       body : Center(
-         child: TextField(onChanged: (value) => setState(() {
-           _nombreSaisi = value;
-           print(_nombreSaisi);
-         }),
-         ),   
-         ),
-   
-       ),
-      
+   return Scaffold(
+          appBar: AppBar(
+            title: Text('Convertisseur de mesures'),
+          ),
+          body: Center(
+          child: Column(
+            children: <Widget>[
+              TextField(onChanged: (value) => _nombreSaisi =  value as double, decoration: InputDecoration(
+                labelText: 'valeur',
+                hintText: 'Enter la valeur',
+                icon: Icon(Icons.numbers,color:Colors.deepPurpleAccent),),
+                keyboardType: TextInputType.number),
+                Text('$_nombreSaisi')
+                ]) ,)
+       
    );
   } 
 }
