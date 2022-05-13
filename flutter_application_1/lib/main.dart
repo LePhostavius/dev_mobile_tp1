@@ -6,33 +6,54 @@ void main() {
   runApp(ConvertisseurDeMesures());
 }
 
-class ConvertisseurDeMesures extends StatefulWidget {
-  @override
-  State<ConvertisseurDeMesures> createState() => _ConvertisseurDeMesuresState();
+class ConvertisseurDeMesures extends StatelessWidget {
+@override
+Widget build(BuildContext context) {
+const appTitle = 'Convertisseur de mesures';
+return MaterialApp(
+title: appTitle,
+home: Scaffold(
+appBar: AppBar(
+title: Text(appTitle),
+),
+body : MyCustomForm(),
+),
+);
+}
 }
 
-class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
 
-  double _nombreSaisi = 0.0;
-  @override 
-  Widget build(BuildContext context)
-  {
-   return Scaffold(
-          appBar: AppBar(
-            title: Text('Convertisseur de mesures'),
-          ),
-          body: Center(
-          child: Column(
-            children: <Widget>[
-              TextField(onChanged: (value) => _nombreSaisi =  value as double, decoration: InputDecoration(
-                labelText: 'valeur',
-                hintText: 'Enter la valeur',
-                icon: Icon(Icons.numbers,color:Colors.deepPurpleAccent),),
-                keyboardType: TextInputType.number),
-                Text('$_nombreSaisi')
-                ]) ,)
-       
-   );
-  } 
+class MyCustomForm extends StatefulWidget {
+@override
+MyCustomFormState createState() {
+return MyCustomFormState();
 }
-
+}
+class MyCustomFormState extends State<MyCustomForm> {
+@override
+Widget build(BuildContext context) {
+return Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget>[
+Padding(
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+child: TextField(
+decoration: InputDecoration(
+border: OutlineInputBorder(),
+hintText: 'Saisir le mot recherché',
+),
+),
+),
+Padding(
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+child: TextFormField(
+decoration: InputDecoration(
+border: UnderlineInputBorder(),
+labelText: 'Saisir votre nom',
+),
+),
+),
+],
+);
+}
+}
