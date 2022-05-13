@@ -35,7 +35,16 @@ class MyCustomFormState extends State<MyCustomForm> {
 
   late String _nombreSaisi;
 
-  final items = ['1','2','3'];
+  final List<String> _unitesMesures = [
+    'mètres',
+    'kilomètres',
+    'grammes',
+    'kilogrammes',
+    'pieds',
+    'miles',
+    'livres',
+    'onces'
+  ];
 
 DropdownMenuItem<String> buildMenuItem(String item)=>  DropdownMenuItem(
   value: item,
@@ -88,7 +97,7 @@ child: Text('Depuis'),
 ),
 Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-child : DropdownButton<String>(value: value,items: items.map(buildMenuItem).toList(),
+child : DropdownButton<String>(value: value,items: _unitesMesures.map(buildMenuItem).toList(),
 onChanged: (value) => setState((() => this.value = value),
 ),
 )
