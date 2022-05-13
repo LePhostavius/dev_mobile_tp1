@@ -31,7 +31,9 @@ return MyCustomFormState();
 }
 class MyCustomFormState extends State<MyCustomForm> {
   late String _dropdownvalue;
-  String? value;
+
+  String? _uniteDepart;
+  String? _uniteConvertion;
 
   late String _nombreSaisi;
 
@@ -97,8 +99,8 @@ child: Text('Depuis'),
 ),
 Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-child : DropdownButton<String>(value: value,items: _unitesMesures.map(buildMenuItem).toList(),
-onChanged: (value) => setState((() => this.value = value),
+child : DropdownButton<String>(value: _uniteDepart,items: _unitesMesures.map(buildMenuItem).toList(),
+onChanged: (value) => setState((() => this._uniteDepart = value),
 ),
 )
 ),
@@ -108,8 +110,8 @@ child: Text('Vers'),
 ),
 Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-child : DropdownButton<String>(value: value,items: _unitesMesures.map(buildMenuItem).toList(),
-onChanged: (value) => setState((() => this.value = value),
+child : DropdownButton<String>(value: _uniteConvertion,items: _unitesMesures.map(buildMenuItem).toList(),
+onChanged: (value) => setState((() => this._uniteConvertion = value),
 ),
 )
 ),
