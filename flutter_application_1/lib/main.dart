@@ -22,6 +22,15 @@ body : MyCustomForm()
 }
 }
 
+class ValeurAConvertir extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    body : Center(child: Text('Depuis'));
+    throw UnimplementedError();
+  }
+  
+}
+
 
 class MyCustomForm extends StatefulWidget {
 @override
@@ -115,7 +124,11 @@ onChanged: (value) => setState((() => this._uniteConvertion = value),
 ),
 )
 ),
-]
+Padding(
+  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+  child : ValeurAConvertir(),
+)]
 );
 }
 }
+
