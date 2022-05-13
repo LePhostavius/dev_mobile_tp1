@@ -56,6 +56,7 @@ children: <Widget>[
 Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
 child: TextField(
+keyboardType: TextInputType.number,
 decoration: InputDecoration(
 border: OutlineInputBorder(),
 hintText: 'Saisir le mot recherché', 
