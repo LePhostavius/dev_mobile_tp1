@@ -25,11 +25,9 @@ body : MyCustomForm()
 class ValeurAConvertir extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Text('Resultat');
+    return Text('Result');
     throw UnimplementedError();
   }
-
-    
   }
   
 
