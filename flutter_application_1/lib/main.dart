@@ -88,7 +88,7 @@ child: Text('Depuis'),
 ),
 Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-child : DropdownButton<String>(items: items.map(buildMenuItem).toList(),
+child : DropdownButton<String>(value: value,items: items.map(buildMenuItem).toList(),
 onChanged: (value) => setState((() => this.value = value),
 ),
 )
