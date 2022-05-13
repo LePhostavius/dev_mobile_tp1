@@ -92,7 +92,7 @@ labelText: '$_nombreSaisi',
 ),
 ),
 Padding(
-padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
 child: Text('Depuis'),
 ),
 Padding(
@@ -101,6 +101,19 @@ child : DropdownButton<String>(value: value,items: _unitesMesures.map(buildMenuI
 onChanged: (value) => setState((() => this.value = value),
 ),
 )
-)]);
+),
+Padding(
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+child: Text('Vers'),
+),
+Padding(
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+child : DropdownButton<String>(value: value,items: _unitesMesures.map(buildMenuItem).toList(),
+onChanged: (value) => setState((() => this.value = value),
+),
+)
+),
+]
+);
 }
 }
