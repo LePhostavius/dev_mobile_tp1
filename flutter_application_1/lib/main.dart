@@ -23,26 +23,19 @@ body : Center(child: MyCustomForm()
 }
 
 
-class ValeurAConvertir extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    
-    return MaterialApp(
-      
-        home: Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Le widget Text'),
-      ),
-      body: Container(
-    width: 300.0,
-    height: 200.0,
-    color: Colors.cyan,
-    child: Text("texte", textAlign: TextAlign.center, style: TextStyle(fontSize: 40))
-    )));
-  }
+class TextTest extends StatelessWidget {
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+ body : Text('bonjour'),
+);
 }
-  
+}
+
+
+
+
+
 
 
 
@@ -140,7 +133,7 @@ onChanged: (value) => setState((() => this._uniteConvertion = value),
 ),
 Padding(
   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-  child : ValeurAConvertir(),
+  child : TextTest(),
 )]
 );
 }
