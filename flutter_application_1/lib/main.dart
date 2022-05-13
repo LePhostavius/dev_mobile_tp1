@@ -16,9 +16,9 @@ home: Scaffold(
 appBar: AppBar(
 title: Text(appTitle),
 ),
-body : MyCustomForm()
+body : Center(child: MyCustomForm()
 ),
-);
+));
 }
 }
 
