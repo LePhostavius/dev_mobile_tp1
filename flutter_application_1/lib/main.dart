@@ -65,14 +65,21 @@ hintText: 'Saisir le mot recherché',
 ),
 Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-child: TextFormField(
+child: TextField(
 decoration: InputDecoration(
 border: UnderlineInputBorder(),
 labelText: '$_nombreSaisi',
 ),
 ),
 ),
-],
-);
+Padding(
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+child: TextField(
+decoration: InputDecoration(
+border: UnderlineInputBorder(),
+labelText: 'Depuis',
+),
+),
+)]);
 }
 }
