@@ -16,7 +16,7 @@ home: Scaffold(
 appBar: AppBar(
 title: Text(appTitle),
 ),
-body :
+body : MyCustomForm()
 ),
 );
 }
@@ -30,7 +30,15 @@ return MyCustomFormState();
 }
 }
 class MyCustomFormState extends State<MyCustomForm> {
-  String _nombreSaisi = "";
+
+  late String _nombreSaisi;
+
+  @override
+  void initState() {
+     _nombreSaisi = "ici apparaitra votre valeur à convertir";
+    // TODO: implement initState
+    super.initState();
+  }
 
   void Changement(String a)
   {
@@ -59,7 +67,7 @@ padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
 child: TextFormField(
 decoration: InputDecoration(
 border: UnderlineInputBorder(),
-labelText: 'Saisir votre nom',
+labelText: '$_nombreSaisi',
 ),
 ),
 ),
