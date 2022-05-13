@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
 
@@ -74,12 +74,8 @@ labelText: '$_nombreSaisi',
 ),
 Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-child: TextField(
-decoration: InputDecoration(
-border: UnderlineInputBorder(),
-labelText: 'Depuis',
+child: Text('Depuis'),
 ),
-),
-)]);
+]);
 }
 }
