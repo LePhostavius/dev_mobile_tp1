@@ -22,12 +22,10 @@ class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
          title : Text('Convertissez !'),
        ),
        body : Center(
-         child: DecoratedBox(
-           decoration:  BoxDecoration(color: Colors.orangeAccent),
-          child : TextField(),
-         ),
+         child: TextField(),   
+         ) 
        ),
-     ), 
+      
    );
   } 
 }
