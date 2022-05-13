@@ -4,7 +4,14 @@ void main() {
   runApp(ConvertisseurDeMesures());
 }
 
-class ConvertisseurDeMesures extends StatelessWidget {
+class ConvertisseurDeMesures extends StatefulWidget {
+  @override
+  State<ConvertisseurDeMesures> createState() => _ConvertisseurDeMesuresState();
+}
+
+class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
+
+  double _nombreSaisi = 0.0;
   @override 
   Widget build(BuildContext context)
   {
@@ -17,10 +24,11 @@ class ConvertisseurDeMesures extends StatelessWidget {
        body : Center(
          child: DecoratedBox(
            decoration:  BoxDecoration(color: Colors.orangeAccent),
-          child : Text('Hello')
-         )
-       )
-     ) 
+          child : TextField(),
+         ),
+       ),
+     ), 
    );
   } 
 }
+
