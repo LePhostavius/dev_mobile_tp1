@@ -30,12 +30,22 @@ return MyCustomFormState();
 }
 }
 class MyCustomFormState extends State<MyCustomForm> {
+  late String _dropdownvalue;
+  String? value;
 
   late String _nombreSaisi;
+
+  final items = ['1','2','3'];
+
+DropdownMenuItem<String> buildMenuItem(String item)=>  DropdownMenuItem(
+  value: item,
+  child:Text(item,style:TextStyle(fontWeight: FontWeight.bold,fontSize:20),)
+);
 
   @override
   void initState() {
      _nombreSaisi = "ici apparaitra votre valeur à convertir";
+     _dropdownvalue = "plus tard";
     // TODO: implement initState
     super.initState();
   }
@@ -76,6 +86,12 @@ Padding(
 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
 child: Text('Depuis'),
 ),
-]);
+Padding(
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+child : DropdownButton<String>(items: items.map(buildMenuItem).toList(),
+onChanged: (value) => setState((() => this.value = value),
+),
+)
+)]);
 }
 }
