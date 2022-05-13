@@ -16,7 +16,7 @@ home: Scaffold(
 appBar: AppBar(
 title: Text(appTitle),
 ),
-body : MyCustomForm(),
+body :
 ),
 );
 }
@@ -30,6 +30,16 @@ return MyCustomFormState();
 }
 }
 class MyCustomFormState extends State<MyCustomForm> {
+  String _nombreSaisi = "";
+
+  void Changement(String a)
+  {
+    setState(() {
+      _nombreSaisi = '$a';
+      print(_nombreSaisi);
+    });
+  }
+
 @override
 Widget build(BuildContext context) {
 return Column(
@@ -40,8 +50,8 @@ padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
 child: TextField(
 decoration: InputDecoration(
 border: OutlineInputBorder(),
-hintText: 'Saisir le mot recherché',
-),
+hintText: 'Saisir le mot recherché', 
+), onChanged: Changement
 ),
 ),
 Padding(
