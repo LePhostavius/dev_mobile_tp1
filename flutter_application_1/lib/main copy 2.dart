@@ -16,7 +16,7 @@ class ConvertisseurDeMesures extends StatefulWidget {
 class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
 @override
 Widget build(BuildContext context) {
-const appTitle = 'Convertisseur de mesures';
+const appTitle = 'Convertisseur de test git';
 return MaterialApp(
 title: appTitle,
 home: Scaffold(
@@ -46,4 +46,5 @@ class MesWidgetsState extends State<MesWidgets>
   }
   
 }
+
 
