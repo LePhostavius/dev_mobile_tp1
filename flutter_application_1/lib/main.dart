@@ -26,7 +26,7 @@ class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
         body: Container(
           padding : EdgeInsets.symmetric(horizontal: 20),
           child : Column(
-            children: [v_a_c(),Spacer(),DataToConvert(),Spacer(),depuis(),unite_depart(),Spacer(),vers()],
+            children: [v_a_c(),Spacer(),DataToConvert(),Spacer(),depuis(),unite_depart(),Spacer(),vers(),unite_de_convertion()],
           )
         )
       ));}
