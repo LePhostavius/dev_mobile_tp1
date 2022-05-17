@@ -26,7 +26,7 @@ class _ConvertisseurDeMesuresState extends State<ConvertisseurDeMesures> {
         body: Container(
           padding : EdgeInsets.symmetric(horizontal: 20),
           child : Column(
-            children: [Spacer(),v_a_c(),Spacer(),DataToConvert(),Spacer(),depuis(),unite_depart(),Spacer(),vers()],
+            children: [v_a_c(),Spacer(),DataToConvert(),Spacer(),depuis(),unite_depart(),Spacer(),vers()],
           )
         )
       ));}
@@ -58,6 +58,49 @@ class unite_depart extends StatefulWidget {
   @override
   State<unite_depart> createState() => _unite_departState();
 }
+
+class unite_de_convertion extends StatefulWidget {
+
+
+  @override
+  State<unite_de_convertion> createState() => _unite_de_convertionState();
+}
+
+class _unite_de_convertionState extends State<unite_de_convertion> {
+
+String _uniteDeConvertion = "";
+ 
+ final List<String> _unitesMesures = [
+    'mètres',
+    'kilomètres',
+    'grammes',
+    'kilogrammes',
+    'pieds',
+    'miles',
+    'livres',
+    'onces'
+  ];
+
+  @override
+  void initState()
+  {
+    _uniteDeConvertion = _unitesMesures.first;
+  }
+
+  DropdownMenuItem<String> buildMenuItem(String item)=>  DropdownMenuItem(
+  value: item,
+  child:Text(item,style:TextStyle(fontWeight: FontWeight.bold,fontSize:20),)
+);
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(value: _uniteDeConvertion,items: _unitesMesures.map(buildMenuItem).toList(),
+     onChanged: (value) => setState(((() => this._uniteDeConvertion = value!))));
+     
+  }
+}
+
+
 
 class _unite_departState extends State<unite_depart> {
 
